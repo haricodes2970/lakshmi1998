@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#9b2c4a">
+<title>Lakshmi 1998</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+  <header class="top">
+    <h1>Lakshmi <span>1998</span></h1>
+    <p>Daily routine &amp; shlokas · ದಿನಚರಿ ಮತ್ತು ಶ್ಲೋಕಗಳು</p>
+  </header>
+
+  <section class="card">
+    <div class="weekbar">
+      <button class="nav" id="prevDay" aria-label="Previous day">‹</button>
+      <div class="tabs" id="tabs"></div>
+      <button class="nav" id="nextDay" aria-label="Next day">›</button>
+    </div>
+    <div class="dayhead">
+      <div>
+        <h2 id="dayTitle"></h2>
+        <span class="badge" id="todayBadge" hidden>Today</span>
+      </div>
+      <button class="link" id="goToday">Jump to today</button>
+    </div>
+    <div class="progress">
+      <div class="bar"><i id="barFill"></i></div>
+      <span id="pct"></span>
+    </div>
+    <form id="addForm" class="add">
+      <input id="newTask" type="text" placeholder="Add a task… / ಹೊಸ ಕೆಲಸ…" maxlength="200" autocomplete="off" required>
+      <select id="addTo" aria-label="Where to add"></select>
+      <button type="submit">Add</button>
+    </form>
+  </section>
+
+  <div id="sections"></div>
+
+  <section class="card">
+    <div class="dayhead">
+      <h2 class="kn">ಶ್ಲೋಕಗಳು <small>Shlokas</small></h2>
+      <button class="link" id="newShloka">+ New shloka</button>
+    </div>
+    <div id="shlokas"></div>
+  </section>
+</main>
+
+<dialog id="dlg">
+  <form method="dialog" id="dlgForm">
+    <h3 id="dlgTitle">New shloka</h3>
+    <input id="fTitle" class="kn" placeholder="Title / ಶೀರ್ಷಿಕೆ" maxlength="120" required>
+    <textarea id="fText" class="kn" rows="5" placeholder="Shloka (Kannada script) / ಶ್ಲೋಕ" required></textarea>
+    <textarea id="fKn" class="kn" rows="4" placeholder="ಕನ್ನಡದಲ್ಲಿ ಅರ್ಥ"></textarea>
+    <textarea id="fEn" rows="4" placeholder="Meaning in English"></textarea>
+    <div class="row">
+      <button type="button" class="ghost" id="fCancel">Cancel</button>
+      <button type="submit">Save</button>
+    </div>
+  </form>
+</dialog>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
